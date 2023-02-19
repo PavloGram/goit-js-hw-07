@@ -1,11 +1,11 @@
 import { galleryItems } from './gallery-items.js';
 // import * as basicLightbox from 'basiclightbox'
 
-const galeryEl = document.querySelector('.gallery');
+const galleryEl = document.querySelector('.gallery');
 
 const allGalary = [];
 
-const galary = galleryItems.map(e => {
+const gallary = galleryItems.map(e => {
   const img = document.createElement('img');
   img.classList.add('gallery__image');
   img.alt = e.description;
@@ -25,9 +25,9 @@ const galary = galleryItems.map(e => {
   return allGalary.push(item);
 });
 
-galeryEl.append(...allGalary);
+galleryEl.append(...allGalary);
 
-galeryEl.addEventListener('click', openModalImg);
+galleryEl.addEventListener('click', openModalImg);
 
 function openModalImg(eve) {
   eve.preventDefault();
@@ -38,7 +38,7 @@ function openModalImg(eve) {
 
   instance.show();
 
-  galeryEl.addEventListener('keydown', e => {
+  galleryEl.addEventListener('keydown', e => {
     if (e.code === 'Escape') {
       instance.close();
     }
